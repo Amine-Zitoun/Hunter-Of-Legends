@@ -64,17 +64,6 @@ jupyter==1.0.0
 jupyter-client==5.2.4
 jupyter-console==6.0.0
 jupyter-core==4.4.0
-Keras==2.2.4
-Keras-Applications==1.0.8
-Keras-Preprocessing==1.1.0
-kerasplotlib==0.1.4
-Kivy==1.11.1
-kivy-deps.angle==0.1.9
-kivy-deps.glew==0.1.12
-kivy-deps.gstreamer==0.1.17
-kivy-deps.sdl2==0.1.22
-Kivy-Garden==0.1.4
-kiwisolver==1.1.0
 leagueoflegends==1.4
 lightgbm==2.2.3
 Markdown==3.1.1
