@@ -9,7 +9,7 @@ import pandas as pd
 global p2
 
 
-api_key= "RGAPI-1d2d996f-e5d1-4aea-a023-87f77dfbdf49"
+api_key= "RGAPI-4ac148f7-07f6-4104-96e4-08a1aad4eed6"
 region= "euw1"
 
 
@@ -131,14 +131,14 @@ bot = commands.Bot(command_prefix='#')
 @bot.command()
 async def play(ctx):
     await ctx.send("**Welcome To Hunter Of Legends**, If you are in a game Use #Name <SummonerName>")
-    await ctx.send("Please type your nickname without Spaces")
+    await ctx.send("Please type your nickname")
 
 
 
 @bot.command()
 async def Name(ctx,message):
     print(message)
-    id= request_id(api_key,message,region)
+    id= request_id(api_key,message.replace(' ',''),region)
     print(id)
     names,champions_key =request_game_info(id,api_key,region)
     p2 =""
