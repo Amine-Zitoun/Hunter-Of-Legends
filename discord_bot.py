@@ -9,7 +9,7 @@ import pandas as pd
 global p2
 
 
-api_key= "RGAPI-4ac148f7-07f6-4104-96e4-08a1aad4eed6"
+api_key= API_KEY
 region= "euw1"
 
 
@@ -187,4 +187,4 @@ async def commands(ctx):
         value=" Enter your league of legends username and the prey's name\n\
         to get your score to do that simply use #Score <summonername> <prey>",inline=False)
     await ctx.send('',embed=halp)
-bot.run("NDcwMjE2OTM1NDE4NzU3MTMx.XnvuFw.I98iUYAk6J-MTAPbaUB4nIe4d5c")
+bot.run(TOKEN)
