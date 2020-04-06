@@ -135,7 +135,7 @@ def main():
     names= [c['id'] for c in champ_data]
     keys = [c['key'] for c in champ_data]
     dict_data = dict(zip(keys, names))
-    api_key= "RGAPI-92ec2123-7def-4140-a706-ab7a81cba5d0"
+    api_key= API_KEY
     print('[*] Wa hbibi register your region and name then you will be able to use the commands '+
     'below FOR\n\n[*] summoner_data user -D \n\n[*] spectate user -S\n\n[*] MatchHistory -H\n\n[*] Match By ID -M\n\n[*] Score -L\n\n[*] Play -P')
 
