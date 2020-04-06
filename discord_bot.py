@@ -119,11 +119,13 @@ def get_match_kills(p1,p2,api_key,region):
 
 
 
-bot = commands.Bot(command_prefix='#')
+bot = commands.Bot(command_prefix='>')
 
 
 
-
+@bot.event
+async def on_read():
+    await bot.change_presence(activity=discord.Game(name=">help to display commands :D"))
 
 
 
