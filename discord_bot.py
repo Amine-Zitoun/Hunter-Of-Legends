@@ -119,50 +119,72 @@ def get_match_kills(p1,p2,api_key,region):
 
 
 
-bot = commands.Bot(command_prefix='>')
+bot = commands.Bot(command_prefix='#')
 
 
 
 @bot.event
-async def on_read():
-    await bot.change_presence(activity=discord.Game(name=">help to display commands :D"))
+async def on_ready():
+    bot.remove_command('help')
+    await bot.change_presence(activity=discord.Game(name="#commands to display commands :D"))
 
 
 
-
+'''
 @bot.command()
 async def play(ctx):
-    await ctx.send("**Welcome To Hunter Of Legends**, If you are in a game Use #Name <SummonerName>")
+    await ctx.send("**Welcome To Hunter Of Legends**, If you are in a game Use #Name <SummonerName>\n")
     await ctx.send("Please type your nickname")
 
 
-
+'''
 @bot.command()
 async def Name(ctx,message):
     print(message)
-    id= request_id(api_key,message.replace(' ',''),region)
-    print(id)
-    names,champions_key =request_game_info(id,api_key,region)
-    p2 =""
+    try:
+        id= request_id(api_key,message.replace(' ',''),region)
+        print(id)
+        names,champions_key =request_game_info(id,api_key,region)
+        p2 =""
 
-    new_names = [x.replace(' ','') for x in names]
+        new_names = [x.replace(' ','') for x in names]
 
 
-    import random
-    if message in new_names[5:]:
-        await ctx.send(f"**Your Prey is:  **{random.choice(names[:5])}")
-    elif message in new_names[:5]:
-        await ctx.send(f"**Your Prey is:  **{random.choice(names[5:])}")
+        import random
+        if message in new_names[5:]:
+            await ctx.send(f"**Your Prey is:  **{random.choice(names[:5])}")
+        elif message in new_names[:5]:
+            await ctx.send(f"**Your Prey is:  **{random.choice(names[5:])}")
 
-    await ctx.send("Use #Score <YourSummnorname> <Prey'sName> to get Your Score after The Match Finishes")
+        await ctx.send("Use #Score <YourSummnorname> <Prey'sName> to get Your Score after The Match Finishes")
+
+    except KeyError:
+        await ctx.send("*Oops...*,You either are not in a match or you typed your summoner's name with spaces ")
+
+
 
 
 
 
 @bot.command()
 async def Score(ctx,p1,Prey):
-    p1_scores,p2_scores=get_match_kills(p1,Prey,api_key,region)
-    await ctx.send(f"Your Score is **{p1_scores}** Good job!!")
+    try:
 
+        p1_scores,p2_scores=get_match_kills(p1,Prey,api_key,region)
+        await ctx.send(f"Your Score is **{p1_scores}** Good job!!")
+    except KeyError:
+        await ctx.send("*Oops...*,You either are not in a match or you typed your summoner's name with spaces ")
 
+@bot.command()
+async def commands(ctx):
+
+    halp = discord.Embed(title="**Welcome to hunter of legends**\nhere are the commands that you can use ",
+        colour =0xff0000)
+    halp.add_field(name="Name",
+        value="Enter your league of legends username to get your prey\n\
+        To do that simply use #Name <summonername> ",inline=False)
+    halp.add_field(name="Score",
+        value=" Enter your league of legends username and the prey's name\n\
+        to get your score to do that simply use #Score <summonername> <prey>",inline=False)
+    await ctx.send('',embed=halp)
 bot.run("NDcwMjE2OTM1NDE4NzU3MTMx.XnvuFw.I98iUYAk6J-MTAPbaUB4nIe4d5c")
