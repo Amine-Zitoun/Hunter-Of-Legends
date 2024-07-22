@@ -1,8 +1,98 @@
-# Hunter-Of-Legends
-League of legends bot that will allow to compete with other league of legends players to get a score that you can brag about to your friends
+# Hunter of Legends
 
-# Usage
-Add the bot to your server using 
-https://discordapp.com/api/oauth2/authorize?client_id=470216935418757131&permissions=0&scope=bot
+Hunter of Legends is a Discord bot that allows you to compete with other people in League of Legends by completing various challenges. Even if you lose the game, you can still earn points by successfully completing the bot's challenges, making the game more fun and engaging.
 
-Use commands and that will display the available commands like Name and Score
+## Table of Contents
+
+- [Features](#features)
+- [How It Works](#how-it-works)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+
+
+## Features
+
+- **Challenge-Based Gameplay**: Earn points by completing in-game challenges.
+- **Leaderboard**: Compete with other players and see who tops the leaderboard.
+- **Discord Integration**: Seamless integration with Discord for easy access and use.
+- **Dynamic Challenges**: Variety of challenges that change over time to keep the gameplay interesting.
+
+## How It Works
+
+1. **Challenge Issuance**: The bot issues challenges to players in a Discord server.
+2. **Gameplay Tracking**: Players complete the challenges in their League of Legends games.
+3. **Point Allocation**: Points are awarded based on the completion of challenges, regardless of the game outcome.
+
+
+## Installation
+
+### Prerequisites
+
+- Python 3.x
+- Discord API token
+- Riot Games API key
+- Discord.py
+- 
+### Steps
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Amine-Zitoun/Hunter-Of-Legends.git
+    cd Hunter-Of-Legends
+    ```
+
+2. Set up the environment:
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+    ```
+
+3. Set up Discord and Riot API:
+    - Obtain a Discord API token and Riot Games API key and set them up in the environment variables or a configuration file.
+
+4. Run the bot:
+    ```bash
+    python bot.py
+    ```
+
+## Usage
+
+1. Add the bot to your Discord server.
+2. Use the bot commands to receive and complete challenges.
+
+
+### Basic Commands
+
+- `!Name`: Set up the tracking and get your prey's name
+- `!Score <YourSummnorname> <Prey'sName> `: get Your Score after The Match Finishes.
+- `!help`: Get help on using the bot.
+
+## Technologies Used
+
+- **Python**: Programming language for the bot logic.
+- **Discord.py**: Library to interact with the Discord API.
+- **Riot API**: To gather game data from League of Legends.
+
+
+## Contributing
+
+Contributions are welcome! Please fork this repository and submit a pull request for review.
+
+1. Fork the repository.
+2. Create a new branch:
+    ```bash
+    git checkout -b feature-branch
+    ```
+3. Make your changes and commit them:
+    ```bash
+    git commit -m "Description of your changes"
+    ```
+4. Push to the branch:
+    ```bash
+    git push origin feature-branch
+    ```
+5. Submit a pull request.
+
