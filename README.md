@@ -9,7 +9,7 @@ Hunter of Legends is a Discord bot that allows you to compete with other people 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
+
 
 
 ## Features
@@ -77,22 +77,5 @@ Hunter of Legends is a Discord bot that allows you to compete with other people 
 - **Riot API**: To gather game data from League of Legends.
 
 
-## Contributing
 
-Contributions are welcome! Please fork this repository and submit a pull request for review.
-
-1. Fork the repository.
-2. Create a new branch:
-    ```bash
-    git checkout -b feature-branch
-    ```
-3. Make your changes and commit them:
-    ```bash
-    git commit -m "Description of your changes"
-    ```
-4. Push to the branch:
-    ```bash
-    git push origin feature-branch
-    ```
-5. Submit a pull request.
 
